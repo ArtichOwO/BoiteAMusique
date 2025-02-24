@@ -101,4 +101,5 @@ chord_t KATYUSHA_ch2[] = {
 	END_NOTE
 };
 
+time_t KATYUSHA_bpm = 150;
 chord_t * KATYUSHA[] = { KATYUSHA_ch1, KATYUSHA_ch2 };

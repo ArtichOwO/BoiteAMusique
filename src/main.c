@@ -9,7 +9,7 @@ static bool onoff = false;
 static bool clicked_long = false;
 static int music_pos = 0;
 chord_t ** musics[] = {
-	LUNE, KATYUSHA
+	LUNE, BRAHMS, KATYUSHA
 };
 
 int main(void) {
