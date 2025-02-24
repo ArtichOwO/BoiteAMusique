@@ -19,8 +19,7 @@ int main(void) {
 	player_led_init();
 	systick_init();
 
-	current_song = (volatile chord_t**) musics[music_pos];
-	bpm = 150;
+	set_current_music(musics[music_pos], 150);
 
 	while (1) {
 		if (!clicked_long)
@@ -29,9 +28,8 @@ int main(void) {
 				println("BUTTON_LONG");
 				if (onoff) {
 					onoff = false;
-					playing = false;
 					music_pos = 0;
-					current_song = (volatile chord_t**) musics[music_pos];
+					set_current_music(musics[music_pos], 150);
 				} else onoff = true;
 				clicked_long = true;
 				break;
@@ -54,9 +52,7 @@ int main(void) {
 				if (finished) {
 					music_pos++;
 					music_pos %= sizeof(musics)/sizeof(chord_t**);
-					playing = false;
-					current_song = (volatile chord_t**) musics[music_pos];
-					finished = false;
+					set_current_music(musics[music_pos], 150);
 					delay(1000);
 					playing = true;
 				}

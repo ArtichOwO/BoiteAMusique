@@ -8,11 +8,10 @@
 typedef uint32_t time_t;
 
 extern volatile bool playing, finished;
-extern volatile chord_t ** current_song;
-extern volatile uint32_t bpm;
 
 void systick_init(void);
 time_t time_ms(void);
 void delay(time_t d);
+void set_current_music(chord_t ** song, uint32_t song_bpm);
 
 #endif

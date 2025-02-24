@@ -108,3 +108,13 @@ time_t get_delay_from_bpm(tempo_t tempo) {
 	time_t ms = 60 * 1000 / bpm;
 	return tempo >= 0 ? ms << tempo : ms >> -tempo;
 }
+
+void set_current_music(chord_t ** song, uint32_t song_bpm) {
+	playing = false;
+	finished = false;
+	ch1_pos = 0, ch2_pos = 0;
+	ch1_wait = 0, ch2_wait = 0;
+	wait = 0, wait_bw = 0;
+	bpm = song_bpm;
+	current_song = (volatile chord_t**) song;
+}
