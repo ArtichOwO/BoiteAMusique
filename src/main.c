@@ -9,10 +9,10 @@ static bool onoff = false;
 static bool clicked_long = false;
 static int music_pos = 0;
 chord_t ** musics[] = {
-	LUNE, BRAHMS, KATYUSHA
+	LUNE, BRAHMS, ANGES, UMUTSUZ_ASK, KATYUSHA
 };
 time_t bpms[] = {
-	LUNE_BPM, BRAHMS_BPM, KATYUSHA_BPM
+	LUNE_BPM, BRAHMS_BPM, ANGES_BPM, UMUTSUZ_ASK_BPM, KATYUSHA_BPM
 };
 
 int main(void) {
