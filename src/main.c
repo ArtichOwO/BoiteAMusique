@@ -37,10 +37,21 @@ int main(void) {
 				println("BUTTON_1");
 				if (onoff) playing ^= true;
 				break;
+			case BUTTON_2:
+				println("BUTTON_2");
+				if (onoff) {
+					music_pos++;
+					music_pos %= sizeof(musics)/sizeof(chord_t**);
+					set_current_music(musics[music_pos], 150);
+					delay(100);
+					playing = true;
+				}
+				clicked_long = true;
+				break;
 			default:
 				break;
 			}
-		else clicked_long = is_released();
+		else clicked_long = is_pressed();
 
 		if (onoff) {
 			player_led_clear(PL_COLOR_R);

@@ -12,6 +12,6 @@ typedef enum {
 
 void button_init(void);
 button_t check_button(void);
-bool is_released(void);
+bool is_pressed(void);
 
 #endif

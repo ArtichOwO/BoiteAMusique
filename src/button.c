@@ -14,18 +14,24 @@ void button_init(void) {
 }
 
 button_t check_button(void) {
-	if (gpio_get(PORT, PIN)) return BUTTON_NO;
+	if (!is_pressed()) return BUTTON_NO;
 
 	time_t current = time_ms();
 
-	while (!gpio_get(PORT, PIN) 
+	while (is_pressed() 
 		&& time_ms() - current < 1000);
 
-	if (time_ms() - current >= 1000) return BUTTON_LONG;
+	if (time_ms() - current >= 950) return BUTTON_LONG;
+	else {
+		current = time_ms();
+		while (!is_pressed()
+			&& time_ms() - current < 100);
+		if (is_pressed()) return BUTTON_2;
+	}
 
 	return BUTTON_1;
 }
 
-bool is_released(void) {
+bool is_pressed(void) {
 	return !gpio_get(PORT, PIN);
 }
