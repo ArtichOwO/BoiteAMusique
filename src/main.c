@@ -11,6 +11,9 @@ static int music_pos = 0;
 chord_t ** musics[] = {
 	LUNE, BRAHMS, KATYUSHA
 };
+time_t bpms[] = {
+	LUNE_BPM, BRAHMS_BPM, KATYUSHA_BPM
+};
 
 int main(void) {
 	print_init();
@@ -19,7 +22,7 @@ int main(void) {
 	player_led_init();
 	systick_init();
 
-	set_current_music(musics[music_pos], 150);
+	set_current_music(musics[music_pos], bpms[music_pos]);
 
 	while (1) {
 		if (!clicked_long)
@@ -29,7 +32,7 @@ int main(void) {
 				if (onoff) {
 					onoff = false;
 					music_pos = 0;
-					set_current_music(musics[music_pos], 150);
+					set_current_music(musics[music_pos], bpms[music_pos]);
 				} else onoff = true;
 				clicked_long = true;
 				break;
@@ -42,7 +45,7 @@ int main(void) {
 				if (onoff) {
 					music_pos++;
 					music_pos %= sizeof(musics)/sizeof(chord_t**);
-					set_current_music(musics[music_pos], 150);
+					set_current_music(musics[music_pos], bpms[music_pos]);
 					delay(100);
 					playing = true;
 				}
@@ -63,7 +66,7 @@ int main(void) {
 				if (finished) {
 					music_pos++;
 					music_pos %= sizeof(musics)/sizeof(chord_t**);
-					set_current_music(musics[music_pos], 150);
+					set_current_music(musics[music_pos], bpms[music_pos]);
 					delay(1000);
 					playing = true;
 				}

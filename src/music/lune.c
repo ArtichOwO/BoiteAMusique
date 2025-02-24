@@ -91,5 +91,4 @@ chord_t LUNE_ch2[] = {
 	END_NOTE
 };
 
-time_t LUNE_bpm = 120;
 chord_t * LUNE[] = { LUNE_ch1, LUNE_ch2 };

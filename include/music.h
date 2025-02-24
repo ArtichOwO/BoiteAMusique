@@ -5,12 +5,12 @@
 #include <systick.h>
 
 extern chord_t * LUNE[];
-extern time_t LUNE_bpm;
+#define LUNE_BPM 120
 
 extern chord_t * BRAHMS[];
-extern time_t BRAHMS_bpm;
+#define BRAHMS_BPM 80
 
 extern chord_t * KATYUSHA[];
-extern time_t KATYUSHA_bpm;
+#define KATYUSHA_BPM 150
 
 #endif

@@ -157,5 +157,4 @@ chord_t BRAHMS_ch2[] = {
     END_NOTE
 };
 
-time_t BRAHMS_bpm = 120;
 chord_t * BRAHMS[] = { BRAHMS_ch1, BRAHMS_ch2 };
