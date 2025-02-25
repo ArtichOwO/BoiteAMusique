@@ -17,6 +17,6 @@ extern chord_t * UMUTSUZ_ASK[];
 #define UMUTSUZ_ASK_BPM 120
 
 extern chord_t * KATYUSHA[];
-#define KATYUSHA_BPM 150
+#define KATYUSHA_BPM 138
 
 #endif
