@@ -4,6 +4,7 @@
 #include <music.h>
 #include <timer.h>
 #include <print.h>
+#include <note_leds.h>
 
 #include <libopencm3/stm32/rcc.h>
 #include <libopencm3/cm3/systick.h>
@@ -55,6 +56,7 @@ void sys_tick_handler(void) {
 				return;
 			}
 			play_chord(CHANNEL1, ch1_current);
+			note_leds_tick();
 			ch1_wait = get_delay_from_bpm(ch1_current.tempo);
 			ch1_pos++;
 		}
@@ -116,5 +118,6 @@ void set_current_music(chord_t ** song, uint32_t song_bpm) {
 	ch1_wait = 0, ch2_wait = 0;
 	wait = 0, wait_bw = 0;
 	bpm = song_bpm;
+	note_leds_stop();
 	current_song = (volatile chord_t**) song;
 }

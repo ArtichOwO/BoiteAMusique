@@ -4,6 +4,7 @@
 #include <print.h>
 #include <button.h>
 #include <player_led.h>
+#include <note_leds.h>
 
 static bool onoff = false;
 static bool clicked_long = false;
@@ -20,6 +21,7 @@ int main(void) {
 	timer_init();
 	button_init();
 	player_led_init();
+	note_leds_init();
 	systick_init();
 
 	set_current_music(musics[music_pos], bpms[music_pos]);
