@@ -2,8 +2,16 @@
 #include <music.h>
 #include <systick.h>
 
+/*Comment sont écrit les notes ?
+	{ nbr_notes_même_temps, (octnote_t []) { OCTNOTE(note, numéro octave) }, duree_note },
+ 	duree_note, 	soit -1 pour les croches,
+  			soit 0 pour les noires,
+     			soit 1 pour les blanches,
+	(pour des puissances de 2) 
+*/
 chord_t LUNE_ch1[] = {
 	{ 1, (octnote_t []) { OCTNOTE(DO, 4) }, -1 },
+	//exemple, ici une seule note, le do de l'octave 4 est joué comme croche
 	{ 1, (octnote_t []) { OCTNOTE(DO, 4) }, -1 },
 	{ 1, (octnote_t []) { OCTNOTE(DO, 4) }, -1 },
 	{ 1, (octnote_t []) { OCTNOTE(RE, 4) }, -1 },
