@@ -31,9 +31,10 @@ void systick_init(void) {
 	systick_interrupt_enable();
 }
 
-void sys_tick_handler(void) { 
-	systime++;
+void sys_tick_handler(void) { //Intéruption du systick
+	systime++;//compteur 
 
+	//récupère les données des channels 1 et 2
 	ch1_current = current_song[CHANNEL1][ch1_pos];
 	ch2_current = current_song[CHANNEL2][ch2_pos];
 
@@ -101,12 +102,12 @@ time_t time_ms(void) {
 	return systime;
 }
 
-void delay(time_t d) {
+void delay(time_t d) {//permet au notes d'être joué les unes après les autres avec des delais
 	time_t begin = systime;
 	while (systime - begin < d);
 }
 
-time_t get_delay_from_bpm(tempo_t tempo) {
+time_t get_delay_from_bpm(tempo_t tempo) {//delais change en fonction du tempo de la musique
 	time_t ms = 60 * 1000 / bpm;
 	return tempo >= 0 ? ms << tempo : ms >> -tempo;
 }
