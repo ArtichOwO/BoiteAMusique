@@ -4,6 +4,8 @@
 #include <note.h>
 #include <systick.h>
 
+// Listes des musiques et de leur tempo respectif
+
 extern chord_t * LUNE[];
 #define LUNE_BPM 120
 

@@ -7,18 +7,21 @@
 #include <note_leds.h>
 
 static bool onoff = false;
+// Pour éviter les clics non voulus
 static bool clicked_long = false;
 static int music_pos = 0;
-//Ordre des musiques
+
+// Ordre des musiques
 chord_t ** musics[] = {
 	LUNE, BRAHMS, ANGES, UMUTSUZ_ASK, KATYUSHA
 };
 time_t bpms[] = {
 	LUNE_BPM, BRAHMS_BPM, ANGES_BPM, UMUTSUZ_ASK_BPM, KATYUSHA_BPM
 };
-//fonction principale
+
+// Fonction principale
 int main(void) {
-	/*lancement de toutes les fonctions d'initialisation*/
+	// Lancement de toutes les fonctions d'initialisation
 	print_init();
 	timer_init();
 	button_init();

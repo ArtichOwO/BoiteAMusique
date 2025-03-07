@@ -1,13 +1,6 @@
 #include <note.h>
 #include <music.h>
 
-/*Comment sont écrit les notes ?
-	{ nbr_notes_même_temps, (octnote_t []) { OCTNOTE(note, numéro octave) }, duree_note },
- 	duree_note, 	soit -1 pour les croches,
-  			        soit 0 pour les noires,
-     		    	soit 1 pour les blanches,
-	(pour des puissances de 2) 
-*/
 chord_t BRAHMS_ch1[] = {
     { 1, (octnote_t []) { OCTNOTE(MI, 3) }, -1 },
     { 1, (octnote_t []) { OCTNOTE(MI, 3) }, -1 },

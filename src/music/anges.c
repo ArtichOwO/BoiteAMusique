@@ -1,12 +1,5 @@
 #include <note.h>
 #include <music.h>
-/*Comment sont écrit les notes ?
-	{ nbr_notes_même_temps, (octnote_t []) { OCTNOTE(note, numéro octave) }, duree_note },
- 	duree_note, 	soit -1 pour les croches,
-  			        soit 0 pour les noires,
-     			    soit 1 pour les blanches,
-	(pour des puissances de 2) 
-*/
 
 chord_t ANGES_ch1[] = {
 // Couplet 1 : "Les anges dans nos campagnes..."
@@ -46,5 +39,4 @@ chord_t ANGES_ch2[] = {
     END_NOTE
 };
 
-// Tableau de sections
 chord_t * ANGES[] = { ANGES_ch1, ANGES_ch2 };

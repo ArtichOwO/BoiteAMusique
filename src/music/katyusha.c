@@ -11,13 +11,6 @@
 #define W_FULL { 0, NULL, NOIRE }
 #define W_DOUB { 0, NULL, BLANCHE }
 
-/*Comment sont écrit les notes ?
-	{ nbr_notes_même_temps, (octnote_t []) { OCTNOTE(note, numéro octave) }, duree_note },
- 	duree_note, 	soit -1 pour les croches,
-  			soit 0 pour les noires,
-     			soit 1 pour les blanches,
-	(pour des puissances de 2) 
-*/
 chord_t KATYUSHA_ch1[] = {
 	{ 1, (octnote_t []) { OCTNOTE(MI, 3) }, NOIRE },
 	W_DEMI,

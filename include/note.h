@@ -24,19 +24,27 @@ typedef enum {
 	SI = 493
 } freq0_t;
 
-#pragma clang diagnostic ignored "-Wshift-count-negative"
 #define OCTNOTE(freq0, octave) \
 	((octave >= 3) ? (freq0 << (octave-3)) : (freq0 >> (3-octave)))
 
 typedef uint32_t octnote_t;
 typedef int8_t tempo_t;
 
+/* Comment écrire les notes ?
+	{ 
+		Nombre de notes dans l'accord, 
+		Liste de notes sous la forme OCTNOTE(fréquence de base, octave),
+ 		Durée de la note : 
+ 			0 pour une noire, -1 pour une croche, 1 une blanche, etc.
+ 	}
+*/
 typedef struct {
 	int8_t nb;
 	octnote_t * notes;
 	tempo_t tempo;
 } chord_t;
 
+// Note de fin obligatoire pour stopper le séquenceur
 #define END_NOTE { 0, NULL, 0 }, { -1, NULL, 0 }
 
 #endif
